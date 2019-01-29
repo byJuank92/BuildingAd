@@ -2,6 +2,8 @@ package main.java.model;
 
 import java.util.List;
 
+import org.hibernate.validator.constraints.Range;
+
 import main.java.utils.TypologyValues;
 
 public class Advertisement {
@@ -11,6 +13,8 @@ public class Advertisement {
 	private Integer houseSize;
 	private Integer gardenSize;
 	private List<Photo> pictures;
+	@Range(min=0,max=100)
+	private Integer rate;
 	
 	public Advertisement(String description, TypologyValues typologyValues, Integer houseSize, Integer gardenSize,
 			List<Photo> pictures) {
@@ -60,5 +64,13 @@ public class Advertisement {
 
 	public void setPictures(List<Photo> pictures) {
 		this.pictures = pictures;
+	}
+	
+	public Integer getRate() {
+		return rate;
+	}
+	
+	public void setRate(Integer rate) {
+		this.rate = rate;
 	}
 }
