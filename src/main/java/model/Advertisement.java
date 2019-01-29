@@ -2,16 +2,22 @@ package main.java.model;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.hibernate.validator.constraints.Range;
 
 import main.java.utils.TypologyValues;
+import main.java.validation.AdvertisementValidator;
 
+@AdvertisementValidator
 public class Advertisement {
 	
-	private String description;
+	@Valid
 	private TypologyValues typologyValues;
+	private String description;
 	private Integer houseSize;
 	private Integer gardenSize;
+	@Valid
 	private List<Photo> pictures;
 	@Range(min=0,max=100)
 	private Integer rate;

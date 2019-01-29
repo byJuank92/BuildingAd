@@ -2,11 +2,15 @@ package main.java.model;
 
 import java.net.URL;
 
+import javax.validation.Valid;
+
 import main.java.utils.QualityValues;
 
 public class Photo {
 
+	@Valid
 	private URL url;
+	@Valid
 	private QualityValues quality;
 	
 	public Photo(URL url, QualityValues quality) {
